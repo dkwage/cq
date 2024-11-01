@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Pretendard", sans-serif;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #2c3e50;
+  color: white;
+}
+h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  margin-bottom: 0;
+  height: 10vh;
+}
+
+h3 {
+  padding: 10px;
+  text-align: center;
+}
+
+/* 입력 필드 스타일 */
+input[type="number"] {
+  width: 50px; /* 입력 필드 너비 */
+  padding: 5px; /* 내부 여백 */
+  margin: 5px 0; /* 외부 여백 */
+  border: 1px solid #ccc; /* 테두리 */
+  border-radius: 5px; /* 테두리 둥글기 */
+}
+
+input[type="number"]:read-only {
+  background-color: #2c3e50; /* 읽기 전용 필드 배경색 */
+  color: white; /* 읽기 전용 필드 글자색 */
+  font-weight: 600;
+}
+
+/* 섹션 간격 */
+div {
+  margin-bottom: 20px;
+  margin-left: 10px;
+}
+
+/* 링크 스타일 */
+a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+button {
+  padding: 10px 20px;
+  background-color: #2c3e50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+}
