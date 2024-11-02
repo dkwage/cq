@@ -169,22 +169,44 @@
         id="exceptions"
         readonly
       />명<br />
-      가. 1생활관 : 휴가
+      가. 총괄 : 휴가
       <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="vacationTotal"
+        readonly
+      />명<br />
+      나. 1생활관 :
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="dorm1Exceptions"
+        readonly
+      />명<br />
+      * 휴가<input
         type="number"
         inputmode="numeric"
         pattern="[0-9]*"
         id="vacation1"
       />명<br />
-      나. 2생활관 : 휴가
+      다. 2생활관 :
       <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="dorm2Exceptions"
+        readonly
+      />명<br />
+      * 휴가<input
         type="number"
         inputmode="numeric"
         pattern="[0-9]*"
         id="vacation2"
       />명<br /><br />
 
-      3. 현재원 :
+      3. 현재원 장소별 현황 :
       <input
         type="number"
         inputmode="numeric"
@@ -213,7 +235,7 @@
         pattern="[0-9]*"
         id="dorm1Sleeping"
         readonly
-      />명 취침<br />
+      />명 취침 중<br />
       * 사지방
       <input
         type="number"
@@ -253,7 +275,7 @@
         pattern="[0-9]*"
         id="dorm2Sleeping"
         readonly
-      />명 취침<br />
+      />명 취침 중<br />
       * 사지방
       <input
         type="number"

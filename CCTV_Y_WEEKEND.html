@@ -169,8 +169,29 @@
         id="exceptions"
         readonly
       />명<br />
-      가. 1생활관 : 휴가
+      가. 총괄 : 휴가
       <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="vacationTotal"
+        readonly
+      />명, 외박<input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="sleepOverTotal"
+        readonly
+      />명<br />
+      나. 1생활관 :
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="dorm1Exceptions"
+        readonly
+      />명<br />
+      * 휴가<input
         type="number"
         inputmode="numeric"
         pattern="[0-9]*"
@@ -181,8 +202,15 @@
         pattern="[0-9]*"
         id="sleepOver1"
       />명<br />
-      나. 2생활관 : 휴가
+      다. 2생활관 :
       <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="dorm2Exceptions"
+        readonly
+      />명<br />
+      * 휴가<input
         type="number"
         inputmode="numeric"
         pattern="[0-9]*"

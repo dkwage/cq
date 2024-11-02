@@ -13,8 +13,17 @@ function updateTotalMembers() {
   const vacation2 =
     parseInt(document.getElementById("vacation2").value, 10) || 0;
 
+  const dorm1Exceptions = vacation1;
+  document.getElementById("dorm1Exceptions").value = dorm1Exceptions;
+
+  const dorm2Exceptions = vacation2;
+  document.getElementById("dorm2Exceptions").value = dorm2Exceptions;
+
   const exceptions = vacation1 + vacation2;
   document.getElementById("exceptions").value = exceptions;
+
+  const vacationTotal = exceptions;
+  document.getElementById("vacationTotal").value = vacationTotal;
 
   const currentMembers = totalMembers - exceptions;
   document.getElementById("currentMembers").value = currentMembers;
@@ -123,17 +132,21 @@ function generateAndCopyText() {
   updateTotalMembers();
 
   const text = `3포대 ${hours}시 인원 보고
+
   1. 총원 : ${document.getElementById("totalMembers").value}명
       가. 1생활관 : ${document.getElementById("dorm1Total").value}명
       나. 2생활관 : ${document.getElementById("dorm2Total").value}명
 
-  2. 열외 : ${document.getElementById("exceptions").value}명
-      가. 1생활관 : 휴가 ${document.getElementById("vacation1").value}명
-      나. 2생활관 : 휴가 ${document.getElementById("vacation2").value}명
+   2. 열외 : ${document.getElementById("exceptions").value}명
+      가. 총괄 : 휴가 ${document.getElementById("vacationTotal").value}명
+      나. 1생활관 : ${document.getElementById("dorm1Exceptions").value}명
+          * 휴가 ${document.getElementById("vacation1").value}명
+      다. 2생활관 : ${document.getElementById("dorm2Exceptions").value}명
+          * 휴가 ${document.getElementById("vacation2").value}명
 
-  3. 현재원 : ${document.getElementById("currentMembers").value}명 중 ${
-    document.getElementById("sleepingInDorm").value
-  }명 생활관 취침
+  3. 현재원 장소별 현황 : ${
+    document.getElementById("currentMembers").value
+  }명 중 ${document.getElementById("sleepingInDorm").value}명 생활관 취침
       가. 1생활관 : ${document.getElementById("dorm1Current").value}명 중 ${
     document.getElementById("dorm1Sleeping").value
   }명 취침
