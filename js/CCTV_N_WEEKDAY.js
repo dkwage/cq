@@ -116,7 +116,7 @@ function generateAndCopyText() {
       가. 1생활관 : ${document.getElementById("dorm1Total").value}명
       나. 2생활관 : ${document.getElementById("dorm2Total").value}명
 
-  2. 열외 : ${document.getElementById("exceptions").value}명
+  2. 열외(주둔지에 없는 인원) : ${document.getElementById("exceptions").value}명
       가. 총괄 : 휴가 ${document.getElementById("vacationTotal").value}명
       나. 1생활관 : ${document.getElementById("dorm1Exceptions").value}명
           * 휴가 ${document.getElementById("vacation1").value}명

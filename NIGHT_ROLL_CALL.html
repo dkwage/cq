@@ -103,7 +103,7 @@
       href="./favicon/favicon-128.png"
       sizes="128x128"
     />
-    <link rel="stylesheet" as="style" href="./css/style-cq-index.css" />
+    <link rel="stylesheet" as="style" href="./css/style-cq.css" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -123,16 +123,74 @@
     <header>
       <h1>3포대 당직분대장 인원보고</h1>
     </header>
-    <div class="button-container">
-      <button onclick="window.location.href='./ROLL_CALL.html';" class="btn_1">
-        점호
-      </button>
-    </div>
+    <h3>3포대 저녁점호 결과보고</h3>
 
+    <div class="container">
+      1. 인원현황<br />
+      - 총원 :
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="totalMembers"
+        value="46"
+      />명<br />
+
+      - 열외 :
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="exceptions"
+        readonly
+      />명<br />
+      - 열외내용 : 당직
+      <input type="number" inputmode="numeric" pattern="[0-9]*" id="CQ" />명,
+      휴가
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="vacation"
+      />명, 외박
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="sleepOver"
+      />명, CCTV
+      <input type="number" inputmode="numeric" pattern="[0-9]*" id="CCTV" />명
+      <br />- 현재원
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="currentMembers"
+        readonly
+      />
+      <br /><br />
+      2. 휴대폰 제출 -
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="phoneTotal"
+        readonly
+      />대 중
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="phoneCurrent"
+        readonly
+      />대 제출 완료 <br />- 비콘 등록 양호<br />
+      - USIM칩 확인 양호 <br /><br />3. 건강상태 특이사항 없음 <br /><br />그 외
+      특이사항 없습니다!
+    </div>
+    <br />
     <div class="button-container">
-      <button onclick="window.location.href='./NIGHT_DUTY.html';" class="btn_2">
-        야간 인원보고
-      </button>
+      <button onclick="generateAndCopyText()">문장 생성 및 복사</button>
     </div>
   </body>
+  <script src="./js/NIGHT_ROLL_CALL.js"></script>
 </html>

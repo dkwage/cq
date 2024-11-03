@@ -103,7 +103,7 @@
       href="./favicon/favicon-128.png"
       sizes="128x128"
     />
-    <link rel="stylesheet" as="style" href="./css/style-cq-index.css" />
+    <link rel="stylesheet" as="style" href="./css/style-cq.css" />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -123,16 +123,72 @@
     <header>
       <h1>3포대 당직분대장 인원보고</h1>
     </header>
-    <div class="button-container">
-      <button onclick="window.location.href='./ROLL_CALL.html';" class="btn_1">
-        점호
-      </button>
-    </div>
+    <h3>3포대 아침점호 결과보고</h3>
 
+    <div class="container">
+      - 총원 :
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="totalMembers"
+        value="46"
+      />명<br />
+
+      - 열외 :
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="exceptions"
+        readonly
+      />명<br />
+      - 열외내용 : 당직
+      <input type="number" inputmode="numeric" pattern="[0-9]*" id="CQ" />명,
+      휴가
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="vacation"
+      />명, 배차
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="vehicle"
+      />명, CCTV
+      <input type="number" inputmode="numeric" pattern="[0-9]*" id="CCTV" />명,
+      외박
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="sleepOver"
+      />명, 당직 준비
+      <input type="number" inputmode="numeric" pattern="[0-9]*" id="preCQ" />명,
+      근무 교대
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="preCCTV"
+      />명<br /><br />
+
+      - 현재원
+      <input
+        type="number"
+        inputmode="numeric"
+        pattern="[0-9]*"
+        id="currentMembers"
+        readonly
+      />
+      이상없습니다.<br /><br />
+    </div>
+    <br />
     <div class="button-container">
-      <button onclick="window.location.href='./NIGHT_DUTY.html';" class="btn_2">
-        야간 인원보고
-      </button>
+      <button onclick="generateAndCopyText()">문장 생성 및 복사</button>
     </div>
   </body>
+  <script src="./js/MORNING_ROLL_CALL.js"></script>
 </html>

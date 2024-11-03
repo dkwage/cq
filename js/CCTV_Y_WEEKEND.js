@@ -26,7 +26,7 @@ function updateTotalMembers() {
   const exceptions = vacation1 + sleepOver1 + sleepOver2 + vacation2;
   document.getElementById("exceptions").value = exceptions;
 
-  const vacationTotal = exceptions;
+  const vacationTotal = vacation1 + vacation2;
   document.getElementById("vacationTotal").value = vacationTotal;
 
   const sleepOverTotal = sleepOver1 + sleepOver2;
@@ -149,7 +149,7 @@ function generateAndCopyText() {
       가. 1생활관 : ${document.getElementById("dorm1Total").value}명
       나. 2생활관 : ${document.getElementById("dorm2Total").value}명
 
- 2. 열외 : ${document.getElementById("exceptions").value}명
+ 2. 열외(주둔지에 없는 인원) : ${document.getElementById("exceptions").value}명
       가. 총괄 : 휴가 ${
         document.getElementById("vacationTotal").value
       }명, 외박 ${document.getElementById("sleepOverTotal").value}명
