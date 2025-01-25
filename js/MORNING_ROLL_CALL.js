@@ -56,8 +56,8 @@ function generateAndCopyText() {
 - 열외 : ${document.getElementById("exceptions").value}명
 - 열외내용 : 당직 ${document.getElementById("CQ").value}명, 휴가 ${
     document.getElementById("vacation").value
-  }명, 배차 ${document.getElementById("vehicle").value}명, CCTV ${
-    document.getElementById("CCTV").value
+  }명, CCTV ${document.getElementById("CCTV").value}명, 배차 ${
+    document.getElementById("vehicle").value
   }명, 외박 ${document.getElementById("sleepOver").value}명, 당직준비 ${
     document.getElementById("preCQ").value
   }명, 근무교대 ${document.getElementById("preCCTV").value}명

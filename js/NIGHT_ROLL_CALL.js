@@ -46,8 +46,8 @@ function generateAndCopyText() {
   - 열외 : ${document.getElementById("exceptions").value}명
   - 열외내용 : 당직 ${document.getElementById("CQ").value}명, 휴가 ${
     document.getElementById("vacation").value
-  }명, 외박 ${document.getElementById("sleepOver").value}명, CCTV ${
-    document.getElementById("CCTV").value
+  }명, CCTV ${document.getElementById("CCTV").value}명, 외박 ${
+    document.getElementById("sleepOver").value
   }명
   - 현재원 : ${document.getElementById("currentMembers").value}명
   
