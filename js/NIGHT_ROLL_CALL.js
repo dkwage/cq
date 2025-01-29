@@ -39,28 +39,40 @@ function generateAndCopyText() {
   // 합계를 최신 상태로 업데이트
   updateTotalMembers();
 
-  const text = `3포대 저녁점호 결과보고
-
-  1. 인원현황
-  - 총원 : ${document.getElementById("totalMembers").value}명
-  - 열외 : ${document.getElementById("exceptions").value}명
-  - 열외내용 : 당직 ${document.getElementById("CQ").value}명, 휴가 ${
-    document.getElementById("vacation").value
-  }명, CCTV ${document.getElementById("CCTV").value}명, 외박 ${
-    document.getElementById("sleepOver").value
-  }명
-  - 현재원 : ${document.getElementById("currentMembers").value}명
+   let text = `3포대 저녁점호 결과보고
   
-  2. 휴대폰 제출 - ${document.getElementById("phoneTotal").value}대 중 ${
-    document.getElementById("phoneCurrent").value
-  }대 제출 완료
-- 비콘 등록 양호
-- USIM칩 확인 양호
-
-3. 건강상태 특이사항 없음
-
-그 외 특이사항 없습니다!`;
-
+    1. 인원현황
+    - 총원 : ${document.getElementById("totalMembers").value}명
+    - 열외 : ${document.getElementById("exceptions").value}명
+    - 열외내용 :`;
+  
+  if (document.getElementById("CQ").value != 0) {
+    text += ` 당직 ${document.getElementById("CQ").value}명,`;
+  }
+  if (document.getElementById("vacation").value != 0) {
+    text += ` 휴가 ${document.getElementById("vacation").value}명,`;
+  }
+  if (document.getElementById("CCTV").value != 0) {
+    text += ` CCTV ${document.getElementById("CCTV").value}명,`;
+  }
+  if (document.getElementById("sleepOver").value != 0) {
+    text += ` 외박 ${document.getElementById("sleepOver").value}명`;
+  }
+  
+  // Remove trailing comma if present
+  text = text.replace(/,\s*$/, '');
+  
+  text += `
+    - 현재원 : ${document.getElementById("currentMembers").value}명
+  
+    2. 휴대폰 제출 - ${document.getElementById("phoneTotal").value}대 중 ${document.getElementById("phoneCurrent").value}대 제출 완료
+  - 비콘 등록 양호
+  - USIM칩 확인 양호
+  
+  3. 건강상태 특이사항 없음
+  
+  그 외 특이사항 없습니다!`;
+  
   navigator.clipboard.writeText(text).then(() => {
     alert("문장이 클립보드에 복사되었습니다.");
   });

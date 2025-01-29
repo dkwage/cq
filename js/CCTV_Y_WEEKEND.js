@@ -143,45 +143,76 @@ function generateAndCopyText() {
   // 합계를 최신 상태로 업데이트
   updateTotalMembers();
 
-  const text = `3포대 ${hours}시 인원 보고
-
-  1. 총원 : ${document.getElementById("totalMembers").value}명
-      가. 1생활관 : ${document.getElementById("dorm1Total").value}명
-      나. 2생활관 : ${document.getElementById("dorm2Total").value}명
-
- 2. 열외(주둔지에 없는 인원) : ${document.getElementById("exceptions").value}명
-      가. 총괄 : 휴가 ${
-        document.getElementById("vacationTotal").value
-      }명, 외박 ${document.getElementById("sleepOverTotal").value}명
-      나. 1생활관 : ${document.getElementById("dorm1Exceptions").value}명
-          * 휴가 ${document.getElementById("vacation1").value}명, 외박 ${
-    document.getElementById("sleepOver1").value
-  }명 
-      다. 2생활관 : ${document.getElementById("dorm2Exceptions").value}명
-          * 휴가 ${document.getElementById("vacation2").value}명, 외박 ${
-    document.getElementById("sleepOver2").value
-  }명
-
-  3. 현재원 장소별 현황 : ${
-    document.getElementById("currentMembers").value
-  }명 중 ${document.getElementById("sleepingInDorm").value}명 생활관 취침
-      가. 1생활관 : ${document.getElementById("dorm1Current").value}명 중 ${
-    document.getElementById("dorm1Sleeping").value
-  }명 취침
-      * 사지방 ${document.getElementById("dorm1Saji").value}명, 체단 ${
-    document.getElementById("dorm1Chedan").value
-  }명, 불침번 ${document.getElementById("dorm1NightShift").value}명, CCTV ${
-    document.getElementById("dorm1CCTV").value
-  }명, 당직 ${document.getElementById("dorm1Duty").value}명
-      나. 2생활관 : ${document.getElementById("dorm2Current").value}명 중 ${
-    document.getElementById("dorm2Sleeping").value
-  }명 취침
-      * 사지방 ${document.getElementById("dorm2Saji").value}명, 체단 ${
-    document.getElementById("dorm2Chedan").value
-  }명, 불침번 ${document.getElementById("dorm2NightShift").value}명, CCTV ${
-    document.getElementById("dorm2CCTV").value
-  }명, 당직 ${document.getElementById("dorm2Duty").value}명`;
-
+  let text = `3포대 ${hours}시 인원 보고
+  
+    1. 총원 : ${document.getElementById("totalMembers").value}명
+        가. 1생활관 : ${document.getElementById("dorm1Total").value}명
+        나. 2생활관 : ${document.getElementById("dorm2Total").value}명
+  
+     2. 열외(주둔지에 없는 인원) : ${document.getElementById("exceptions").value}명
+        가. 총괄 : 휴가 ${document.getElementById("vacationTotal").value}명, 외박 ${document.getElementById("sleepOverTotal").value}명`;
+  
+  text += `
+        나. 1생활관 : ${document.getElementById("dorm1Exceptions").value}명
+        * `;
+  if (document.getElementById("vacation1").value != 0) {
+    text += `휴가 ${document.getElementById("vacation1").value}명, `;
+  }
+  if (document.getElementById("sleepOver1").value != 0) {
+    text += `외박 ${document.getElementById("sleepOver1").value}명`;
+  }
+  
+  text += `
+        다. 2생활관 : ${document.getElementById("dorm2Exceptions").value}명
+        * `;
+  if (document.getElementById("vacation2").value != 0) {
+    text += `휴가 ${document.getElementById("vacation2").value}명, `;
+  }
+  if (document.getElementById("sleepOver2").value != 0) {
+    text += `외박 ${document.getElementById("sleepOver2").value}명`;
+  }
+  
+  text += `
+    3. 현재원 장소별 현황 : ${document.getElementById("currentMembers").value}명 중 ${document.getElementById("sleepingInDorm").value}명 생활관 취침
+        가. 1생활관 : ${document.getElementById("dorm1Current").value}명 중 ${document.getElementById("dorm1Sleeping").value}명 취침
+        *`;
+  
+  if (document.getElementById("dorm1Saji").value != 0) {
+    text += ` 사지방 ${document.getElementById("dorm1Saji").value}명,`;
+  }
+  if (document.getElementById("dorm1Chedan").value != 0) {
+    text += ` 체단 ${document.getElementById("dorm1Chedan").value}명,`;
+  }
+  if (document.getElementById("dorm1NightShift").value != 0) {
+    text += ` 불침번 ${document.getElementById("dorm1NightShift").value}명,`;
+  }
+  if (document.getElementById("dorm1CCTV").value != 0) {
+    text += ` CCTV ${document.getElementById("dorm1CCTV").value}명,`;
+  }
+  if (document.getElementById("dorm1Duty").value != 0) {
+    text += ` 당직 ${document.getElementById("dorm1Duty").value}명`;
+  }
+  
+  text += `
+        나. 2생활관 : ${document.getElementById("dorm2Current").value}명 중 ${document.getElementById("dorm2Sleeping").value}명 취침
+        *`;
+  
+  if (document.getElementById("dorm2Saji").value != 0) {
+    text += ` 사지방 ${document.getElementById("dorm2Saji").value}명,`;
+  }
+  if (document.getElementById("dorm2Chedan").value != 0) {
+    text += ` 체단 ${document.getElementById("dorm2Chedan").value}명,`;
+  }
+  if (document.getElementById("dorm2NightShift").value != 0) {
+    text += ` 불침번 ${document.getElementById("dorm2NightShift").value}명,`;
+  }
+  if (document.getElementById("dorm2CCTV").value != 0) {
+    text += ` CCTV ${document.getElementById("dorm2CCTV").value}명,`;
+  }
+  if (document.getElementById("dorm2Duty").value != 0) {
+    text += ` 당직 ${document.getElementById("dorm2Duty").value}명`;
+  }
+  
   navigator.clipboard.writeText(text).then(() => {
     alert("문장이 클립보드에 복사되었습니다.");
   });
