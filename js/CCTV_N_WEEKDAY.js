@@ -134,7 +134,8 @@ function generateAndCopyText() {
   }
   
   text += `
-     3. 현재원 장소별 현황 : ${document.getElementById("currentMembers").value}명 중 ${document.getElementById("sleepingInDorm").value}명 생활관 취침
+     
+  3. 현재원 장소별 현황 : ${document.getElementById("currentMembers").value}명 중 ${document.getElementById("sleepingInDorm").value}명 생활관 취침
       가. 1생활관 : ${document.getElementById("dorm1Current").value}명 중 ${document.getElementById("dorm1Sleeping").value}명 취침
       *`;
 
